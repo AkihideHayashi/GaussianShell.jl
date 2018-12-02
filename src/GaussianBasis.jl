@@ -25,8 +25,6 @@ using LinearAlgebra
 normalization_constant(ζ::Float64, n::Vector{Int64}) = (2ζ / π)^(3/4) * (4ζ)^(sum(n) / 2) / sqrt(prod(factorial2.(2n.-1)))
 overlap_ss(pioz::Float64, xi::Float64, AB2::Float64) = pioz * sqrt(pioz) * exp(-xi * AB2)
 kinetic_ss(xi::Float64, AB2::Float64, Sss::Float64) = xi * (3 - 2 * xi * AB2) * Sss
-nuclear_repulsion(N::Vector{Float64}, R::Matrix{Float64}) = sum([N[i] * N[j] / norm(R[i, :] - R[j, :]) for i in 1:length(N) for j in i+1:length(N)])
-
 
 mutable struct STV
     la    ::Int64

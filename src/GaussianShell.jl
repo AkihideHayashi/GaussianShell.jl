@@ -153,5 +153,6 @@ function suberi!(a::Shell, b::Shell, c::Shell, d::Shell, work::Array{Float64, 4}
 end
 
 
+nuclear_repulsion(N::Vector{Float64}, R::Matrix{Float64}) = sum([N[i] * N[j] / norm(R[i, :] - R[j, :]) for i in 1:length(N) for j in i+1:length(N)])
 
 end
