@@ -1,6 +1,5 @@
 module GaussianBasis
 export oneelectrons, oneelectrons!
-export nuclear_repulsion
 export Eri, Eri!, suberi!, unnormalized_eri!
 export STV, STV!, unnormalized_overlap!, unnormalized_kinetic!, unnormalized_nuclear!
 export boys

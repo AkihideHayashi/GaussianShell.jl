@@ -3,7 +3,7 @@ include("GaussianBasis.jl")
 using .GaussianBasis
 using StaticArrays
 using LinearAlgebra
-export Shell, suboneelectrons, suboneelectrons!, oneelectrons!, oneelectrons, suberi!, direct_rhf!
+export Shell, suboneelectrons, suboneelectrons!, oneelectrons!, oneelectrons, suberi!, direct_rhf!, nuclear_repulsion
 struct Shell
     l ::Int64
     size ::Int64
