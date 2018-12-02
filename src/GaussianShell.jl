@@ -1,3 +1,4 @@
+module GaussianShell
 using GaussianBasis
 using StaticArrays
 using LinearAlgebra
@@ -151,3 +152,5 @@ function suberi!(a::Shell, b::Shell, c::Shell, d::Shell, work::Array{Float64, 4}
 end
 
 
+
+end
