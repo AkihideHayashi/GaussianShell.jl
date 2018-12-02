@@ -1,6 +1,6 @@
 module GaussianShell
 include("GaussianBasis.jl")
-using GaussianBasis
+using .GaussianBasis
 using StaticArrays
 using LinearAlgebra
 export Shell, suboneelectrons, suboneelectrons!, oneelectrons!, oneelectrons, suberi!, direct_rhf!
