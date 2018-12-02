@@ -1,3 +1,4 @@
+include("GaussianBasis.jl")
 module GaussianShell
 using GaussianBasis
 using StaticArrays
