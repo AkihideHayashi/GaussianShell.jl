@@ -1,5 +1,5 @@
-include("GaussianBasis.jl")
 module GaussianShell
+include("GaussianBasis.jl")
 using GaussianBasis
 using StaticArrays
 using LinearAlgebra
