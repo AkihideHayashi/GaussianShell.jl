@@ -188,8 +188,8 @@ function eri(basis::Vector{Shell})
     n_basis = sum([length(b.nami) for b in basis])
     n_work = maximum([length(b.nami) for b in basis])
     e = zeros((n_basis, n_basis, n_basis, n_basis))
-    work1 = zeros((n_work, n_work))
-    work2 = zeros((n_work, n_work))
+    work1 = zeros((n_work, n_work, n_work, n_work))
+    work2 = zeros((n_work, n_work, n_work, n_work))
     eri!(basis, e, work1, work2)
     e
 end
