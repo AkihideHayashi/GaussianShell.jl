@@ -152,6 +152,47 @@ function suberi!(a::Shell, b::Shell, c::Shell, d::Shell, work::Array{Float64, 4}
     end
 end
 
+function eri!(basis::Vector{Shell}, eri::Array{Float64, 4}, work::Array{Float64, 4}, work2::Array{Float64, 4})
+    g = Eri(l_max)
+    l_max = maximum(b.l for b in basis)
+    si = 1
+    for i in 1:length(basis)
+        ei = si + length(basis[i].nami) - 1
+        sj = 1
+        for j in 1:length(basis)
+            ej = sj + length(basis[j].nami) - 1
+            sk = 1
+            for k in 1:length(basis)
+                ek = sk + length(basis[k].nami) - 1
+                sl = 1
+                for l in 1:length(basis)
+                    el = sl + length(basis[l].nami) - 1
+                    ri = si:ei
+                    rj = sj:ej
+                    rk = sk:ek
+                    rl = sl:el
+                    suberi!(basis[i], basis[j], basis[k], basis[l], work, work2, g)
+                    eri[ri, rj, rk, rl] = work2[1:length(ri), 1:length(rj), 1:length(rk), 1:length(rl)]
+                    sl += length(basis[l].nami)
+                end
+                sk += length(basis[k].nami)
+            end
+            sj += length(basis[j].nami)
+        end
+        si += length(basis[i].nami)
+    end
+end
+
+
+function eri(basis::Vector{Shell})
+    n_basis = sum([length(b.nami) for b in basis])
+    n_work = maximum([length(b.nami) for b in basis])
+    e = zeros((n_basis, n_basis, n_basis, n_basis))
+    work1 = zeros((n_work, n_work))
+    work2 = zeros((n_work, n_work))
+    eri!(basis, e, work, work2)
+    e
+end
 
 nuclear_repulsion(N::Vector{Float64}, R::Matrix{Float64}) = sum([N[i] * N[j] / norm(R[i, :] - R[j, :]) for i in 1:length(N) for j in i+1:length(N)])
 
