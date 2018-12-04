@@ -190,7 +190,7 @@ function eri(basis::Vector{Shell})
     e = zeros((n_basis, n_basis, n_basis, n_basis))
     work1 = zeros((n_work, n_work))
     work2 = zeros((n_work, n_work))
-    eri!(basis, e, work, work2)
+    eri!(basis, e, work1, work2)
     e
 end
 
