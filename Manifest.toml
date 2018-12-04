@@ -31,14 +31,6 @@ uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 deps = ["LinearAlgebra", "Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
-[[GaussianBasis]]
-deps = ["LinearAlgebra", "SpecialFunctions", "StaticArrays"]
-git-tree-sha1 = "72a3a734bcf44ae3014c9931aed3877881736c43"
-repo-rev = "master"
-repo-url = "https://github.com/akhdhys/GaussianBasis.jl"
-uuid = "ab96d030-f659-11e8-14ef-6de50e5fa9ba"
-version = "0.1.0"
-
 [[InteractiveUtils]]
 deps = ["LinearAlgebra", "Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"

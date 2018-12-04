@@ -153,8 +153,8 @@ function suberi!(a::Shell, b::Shell, c::Shell, d::Shell, work::Array{Float64, 4}
 end
 
 function eri!(basis::Vector{Shell}, eri::Array{Float64, 4}, work::Array{Float64, 4}, work2::Array{Float64, 4})
-    g = Eri(l_max)
     l_max = maximum(b.l for b in basis)
+    g = Eri(l_max)
     si = 1
     for i in 1:length(basis)
         ei = si + length(basis[i].nami) - 1
