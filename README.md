@@ -1,2 +1,2 @@
 # GaussianShell
-Shell interface for GaussianBasis.jl
+Calculate several integrals for hartree forck using gaussian basis set
